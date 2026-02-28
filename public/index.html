@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MineGrid Duel</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>MineGrid Duel</h1>
+
+      <section id="landing" class="card">
+        <h2>Join the arena</h2>
+        <label>
+          Username
+          <input id="nameInput" maxlength="20" placeholder="Enter your name" />
+        </label>
+        <div class="actions">
+          <button id="createRoomBtn">Create Room</button>
+        </div>
+        <div class="join-row">
+          <input id="roomCodeInput" maxlength="6" placeholder="ROOM CODE" />
+          <button id="joinRoomBtn">Join Room</button>
+        </div>
+      </section>
+
+      <section id="room" class="card hidden">
+        <div class="room-header">
+          <div>
+            <p>Room: <strong id="roomCodeLabel">------</strong></p>
+            <p>You are <strong id="seatLabel">Player ?</strong></p>
+            <p>Status: <strong id="statusLabel">Waiting</strong></p>
+            <p>Turn: <strong id="turnLabel">-</strong></p>
+          </div>
+          <button id="leaveRoomBtn" class="danger">Leave Room</button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <ul id="playersList" class="players"></ul>
+
+        <div id="board" class="board"></div>
+
+        <div class="actions">
+          <button id="rematchBtn" class="hidden">Play Again</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/client.js"></script>
+  </body>
+</html>
